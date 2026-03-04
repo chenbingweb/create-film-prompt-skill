@@ -1,0 +1,161 @@
+---
+name: "image-style-prompt-generator"
+description: "使用精选的艺术风格列表，为 ComfyUI 和 ChatGPT 生成高质量的图像生成提示词。当用户请求图像提示词、风格建议或创意灵感时调用此技能。"
+---
+
+# 图片风格提示词生成器 (Image Style Prompt Generator)
+
+此技能用于为 ComfyUI (Stable Diffusion) 和 ChatGPT (DALL-E 3) 等图像生成模型生成详细且具有风格化的提示词。
+
+## 使用方法
+
+当用户提供主题或话题时，使用此技能将特定的艺术风格应用于提示词。
+
+### 工作流程
+
+1.  **确定主题**: 确定图像的主要主题（例如，“一只猫”、“未来城市”）。
+2.  **选择风格**: 从下方的 **风格库** 中选择一种风格。如果用户未指定，请建议几个合适的选项或随机选择一个符合主题的风格。
+3.  **构建提示词**: 将主题、风格和其他细节组合成一个完整的提示词。
+    *   **ComfyUI/Stable Diffusion**: 侧重于关键词、逗号分隔列表和权重（例如：`(masterpiece:1.2), best quality, [Style Name], [Subject], detailed, 8k`）。
+    *   **ChatGPT/DALL-E 3**: 使用自然语言描述（例如：“A highly detailed image of [Subject] in the style of [Style Name], featuring...”）。
+
+## 风格库 (Style Library)
+
+这里有 120 种艺术风格可供选择：
+
+1.  皮影戏 (Chinese Shadow Puppets)
+2.  赛博朋克 (Cyberpunk)
+3.  蒸汽朋克 (Steampunk)
+4.  柴油朋克 (Dieselpunk)
+5.  太阳朋克 (Solarpunk)
+6.  月亮朋克 (Lunarpunk)
+7.  精灵朋克 (Elfpunk)
+8.  极简主义 (Normcore)
+9.  金属核 (Metalcore)
+10. 死亡核 (Deathcore)
+11. 梦幻核 (Dreamcore)
+12. 怪异核 (Weirdcore)
+13. 自然主义 (Naturalism)
+14. 现代主义 (Modernism)
+15. 后现代主义 (Postmodernism)
+16. 超现代主义 (Hypermodernism)
+17. 二维插画 (2D Illustration)
+18. 中世纪插画 (Medieval Illustration)
+19. 奥尔梅克 (Olmec)
+20. 幻想 (Fantasy)
+21. 共感觉 (Synesthesia)
+22. 着色书 (Coloring Book)
+23. 宗教图标 (Religious Icon)
+24. 卡通 (Chibi)
+25. 卡贾尔 (Qajar)
+26. 日本水墨画 (Sumi-e)
+27. 科幻 (Science-Fiction)
+28. 写实 (Realism)
+29. 极简 (Minimalism)
+30. 复古未来主义 (Retrofuturism)
+31. 星系朋克 (Astropunk)
+32. 搞笑流行 (Funny Pop)
+33. 数字艺术 (Digital Art)
+34. 恐怖 (Macabre)
+35. 安装艺术 (Installation Art)
+36. 未来合成 (Futuresynth)
+37. 中国风 (Chinoiserie)
+38. 卡洛林艺术 (Carolingian Art)
+39. 拜占庭艺术 (Byzantine Art)
+40. 敦煌艺术 (Dunhuang Art)
+41. 古希腊艺术 (Ancient Greek Art)
+42. 古罗马艺术 (Ancient Roman Art)
+43. 古埃及艺术 (Ancient Egyptian Art)
+44. 锡耶纳艺术 (Sienese Art)
+45. 罗马式 (Romanesque)
+46. 洛可可 (Rococo)
+47. 波普艺术 (Pop Art)
+48. 新古典主义 (Neoclassicism)
+49. 风格主义 (Mannerism)
+50. 漫画 (Manga)
+51. 原住民艺术 (Aboriginal Art)
+52. 黑暗幻想 (Dark Fantasy)
+53. 哥特 (Gothic)
+54. 构成主义 (Constructivism)
+55. 极致主义 (Maximalism)
+56. 野兽派 (Fauvism)
+57. 哈莱姆文艺复兴 (Harlem Renaissance)
+58. 抽象表现主义 (Abstract Expressionism)
+59. 文艺复兴 (Renaissance)
+60. 前拉斐尔派 (Pre-raphaelite)
+61. 后印象派 (Post-impressionism)
+62. 点彩派 (Pointillism)
+63. 新印象派 (Neo-impressionism)
+64. 新古典主义 (Neo-classicism)
+65. 可爱 (Kawaii)
+66. 爵士时代 (Jazz Age)
+67. 美好时代 (Belle Epoque)
+68. 风格派 (De Stijl)
+69. 新艺术运动 (Art Nouveau)
+70. 装饰艺术 (Art Deco)
+71. 未来主义 (Futurism)
+72. 字母主义 (Letterism)
+73. 民间艺术 (Folk Art)
+74. 印象派 (Impressionism)
+75. 宣传艺术 (Propaganda Art)
+76. 壁画主义 (Muralism)
+77. 像素艺术 (Pixel Art)
+78. 解构主义 (Deconstructivism)
+79. 超现实主义 (Hyperrealism)
+80. 包豪斯 (Bauhaus)
+81. 魔幻现实主义 (Magic Realism)
+82. 至上主义 (Suprematism)
+83. 泛未来主义 (Panfuturism)
+84. 90年代商业 (90s commercial)
+85. 合成波 (Synthwave)
+86. 蒸发波 (Vaporwave)
+87. 哥特朋克 (Gothpunk)
+88. 柴油朋克 (Dieselpunk)
+89. 亡灵朋克 (Necropunk)
+90. 生物朋克 (Biopunk)
+91. 原子朋克 (Atompunk)
+92. 蒸汽朋克 (Steampunk)
+93. 表现主义 (Expressionism)
+94. 巴洛克 (Baroque)
+95. 超现实主义 (Surrealism)
+96. 立体派 (Cubism)
+97. 非洲未来主义 (Afrofuturism)
+98. 放克艺术 (Funk Art)
+99. 棍子图 (Stick Figure Drawing)
+100. 新兴的中期艺术风格和美学 (Emerald)
+101. 剪纸插画风格 (Paper cutout illustration)
+102. 平铺罗列风格 (Knolling style)
+103. 迪士尼风格 (Disney style)
+104. 水彩画 (Watercolor paint)
+105. 波普艺术 (Pop art)
+106. 全息色彩风格 (Holographic)
+107. 电影风格 (Film still)
+108. 二次元风格 (Anime style)
+109. 赛博朋克风格 (Cyberpunk style)
+110. 极简主义风格 (Minimalist design)
+111. 通用风格 (General Styles)
+112. 流派风格 (Genre Styles)
+113. 科幻小说 (Science Fiction)
+114. 极简主义 (Minimalism)
+115. 印象派 (Impressionism)
+116. 油画 (Oil Painting)
+117. 拼贴画 (Collage)
+118. 3D艺术 (3D art)
+119. 抽象艺术 (Abstract Art)
+120. 超现实主义 (Surrealism)
+121. 皮克斯风格 (Pixar Style)
+122. 绘本故事风格 (Storybook Illustration)
+123. 宫崎骏风格 (Studio Ghibli Style)
+124. 国风风格 (Chinese Traditional Style)
+125. 游戏CG风格 (Game CG)
+126. 机甲风格 (Mecha Style)
+
+## 示例 (Examples)
+
+**输入:** "A futuristic city" (未来城市) + 风格: "Cyberpunk" (赛博朋克)
+
+**输出 (ComfyUI):**
+`(masterpiece, best quality:1.2), Cyberpunk style, futuristic city, neon lights, rain-slicked streets, high-tech buildings, holograms, dark atmosphere, (vibrant colors:1.1), 8k resolution, highly detailed`
+
+**输出 (ChatGPT):**
+"Create a highly detailed image of a futuristic city in the style of Cyberpunk. The scene should feature towering high-tech skyscrapers with neon signs, rain-slicked streets reflecting the colorful lights, and holographic advertisements. The atmosphere should be dark yet vibrant, capturing the essence of a high-tech, low-life society."
