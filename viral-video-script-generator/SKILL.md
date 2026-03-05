@@ -11,11 +11,12 @@ description: "Generates 6s viral video scripts for product marketing, featuring 
 
 1.  **商品核心 (Product-Centric)**: 一切围绕用户提供的**商品图**展开。脚本内容需突出商品的外观、功能或使用场景（如：孙悟空喝这瓶饮料、林黛玉用这个美妆产品）。
 2.  **角色带货/互动**: 使用经典且形象固定的虚拟人物（如孙悟空、唐僧、林黛玉、伏地魔等），让他们与商品发生有趣的互动（吐槽、种草、争抢、展示）。
-3.  **视觉一致性**: 深度解析商品图的视觉特征（颜色、包装、材质、Logo），确保生成的 **画面提示词 (Image Prompt)** 中包含准确的商品描述，保持视觉统一。
-4.  **AI 生成优化**:
+3.  **专业分镜构图 (Cinematic Composition)**: 提供影视级的分镜描述，包括人物站位（主视/背视）、景别（中近景/特写）、镜头角度（俯拍/仰拍）及微表情指导，确保画面张力。
+4.  **视觉一致性**: 深度解析商品图的视觉特征（颜色、包装、材质、Logo），确保生成的 **画面提示词 (Image Prompt)** 中包含准确的商品描述，保持视觉统一。
+5.  **AI 生成优化**:
     *   **画面风格**: 根据用户指定的风格（如赛博朋克、皮克斯、国风等）生成画面提示词。
-    *   **视频指令**: 生成用于控制视频动态的提示词（如：特写商品、手持商品展示）。
-5.  **短小精悍**: 严格控制每个分镜时长（通常 3-6 秒），总时长适合短视频传播。
+    *   **视频指令**: 生成包含运镜、动作、构图信息的视频生成提示词。
+6.  **短小精悍**: 严格控制每个分镜时长（通常 3-6 秒），总时长适合短视频传播。
 
 ## 使用场景
 
@@ -37,8 +38,14 @@ description: "Generates 6s viral video scripts for product marketing, featuring 
         *   **角色**: [角色 A] & [角色 B]
         *   **分镜 N (时长: X秒)**:
             *   **剧情**: [角色动作（与商品互动）与台词]
-            *   **画面生成提示词 (Image Prompt)**: `[风格关键词], [商品视觉描述(核心)], [角色外观], [场景描述], [光影/构图], [画质词]`
-            *   **视频生成提示词 (Video Prompt)**: `[运镜指令], [人物动作/商品展示指令], [环境动态]`
+            *   **构图说明**:
+                *   **人物**: [角色A (主视/背视/侧视)], [角色B (局部入镜/背景/无)]
+                *   **站位**: [详细描述位置关系，如：角色A位于画面左侧三分之一处，角色B虚化在右后方]
+                *   **景别**: [如：中近景 (Medium Close-up)、特写 (Close-up)、全身 (Full Shot)]
+                *   **镜头角度**: [如：平视 (Eye-level)、低角度仰拍 (Low Angle)、轻微俯拍 (High Angle)]
+                *   **表情要求**: [微表情描述，如：嘴角上扬带着戏谑，眼神坚定]
+            *   **画面生成提示词 (Image Prompt)**: `[风格关键词], [商品视觉描述(核心)], [角色外观], [构图/站位描述], [表情/动作], [场景描述], [光影/画质词]`
+            *   **视频生成提示词 (Video Prompt)**: `[运镜指令 (如: Slow zoom in, Pan left)], [构图/角度指令], [人物动作/表情变化], [商品展示动态], [环境动态]`
 
 ## 示例 (Examples)
 
@@ -55,13 +62,25 @@ description: "Generates 6s viral video scripts for product marketing, featuring 
 *   **分镜 1 (时长: 3秒)**
     *   **剧情**: 哪吒顶着黑眼圈，手里紧紧握着**那瓶绿色的能量饮料**，背景是堆满屏幕的电竞房。
     *   **台词**: 哪吒: 我命由我不由天，但这局排位，全靠这瓶“续命水”了！
-    *   **画面生成提示词 (Image Prompt)**: `Cyberpunk style, Ne Zha with dark circles under eyes, holding a [green energy drink bottle, glowing liquid, metallic texture] (product), sitting in high-tech gaming room, multiple screens, neon lights, messy desk, detailed, 8k`
-    *   **Video Prompt**: `Handheld camera, Ne Zha raises the drink to his mouth, glowing eyes, dynamic lighting`
+    *   **构图说明**:
+        *   **人物**: 哪吒 (主视，正侧面)
+        *   **站位**: 哪吒位于画面中央，身体前倾靠近屏幕，手持饮料挡在胸前。
+        *   **景别**: 中近景 (Medium Close-up)
+        *   **镜头角度**: 轻微仰拍 (Low Angle)，强调压迫感和专注。
+        *   **表情要求**: 咬牙切齿，眼神死死盯着前方屏幕，黑眼圈明显。
+    *   **画面生成提示词 (Image Prompt)**: `Cyberpunk style, Medium Close-up, Low Angle, Ne Zha with dark circles under eyes, holding a [green energy drink bottle, glowing liquid, metallic texture] (product) in front of chest, sitting in high-tech gaming room, multiple screens, neon lights, messy desk, intense expression, detailed, 8k`
+    *   **Video Prompt**: `Low angle shot, handheld camera shake, Ne Zha raises the drink to his mouth aggressively, glowing eyes, dynamic lighting from screens`
 
 *   **分镜 2 (时长: 3秒)**
     *   **剧情**: 熬丙在旁边优雅地拿着另一瓶同款饮料，轻轻摇晃。
     *   **台词**: 熬丙: 别硬撑了，喝完这口，随我去龙宫... 接着练级。
-    *   **画面生成提示词 (Image Prompt)**: `Cyberpunk style, Ao Bing, elegant pose, holding [green energy drink bottle] (product), cool blue holographic background, dragon elements, futuristic fashion, cinematic lighting`
-    *   **Video Prompt**: `Slow pan, Ao Bing smiles slightly, shakes the bottle gently, liquid movement inside`
+    *   **构图说明**:
+        *   **人物**: 熬丙 (主视)，哪吒 (背影，边缘虚化)
+        *   **站位**: 熬丙靠在电竞椅背上，位于画面右侧黄金分割点，哪吒背影在左下角。
+        *   **景别**: 中景 (Medium Shot)
+        *   **镜头角度**: 平视 (Eye-level)
+        *   **表情要求**: 嘴角微微上扬，带着一丝优雅的嘲讽，眼神轻松。
+    *   **画面生成提示词 (Image Prompt)**: `Cyberpunk style, Medium Shot, Eye-level, Ao Bing leaning on gaming chair, elegant pose, holding [green energy drink bottle] (product), blurred back of Ne Zha in foreground, cool blue holographic background, dragon elements, futuristic fashion, cinematic lighting`
+    *   **Video Prompt**: `Static camera, shallow depth of field, Ao Bing smiles slightly and shakes the bottle gently, liquid movement inside, soft blue light pulsing`
 
 **(此处省略后续 9 个话题...)**
