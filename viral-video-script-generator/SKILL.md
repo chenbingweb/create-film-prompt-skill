@@ -13,9 +13,9 @@ description: "Generates 6s viral video scripts for product marketing, featuring 
 2.  **角色带货/互动**: 使用经典且形象固定的虚拟人物（如孙悟空、唐僧、林黛玉、伏地魔等），让他们与商品发生有趣的互动（吐槽、种草、争抢、展示）。
 3.  **专业分镜构图 (Cinematic Composition)**: 提供影视级的分镜描述，包括人物站位（主视/背视）、景别（中近景/特写）、镜头角度（俯拍/仰拍）及微表情指导，确保画面张力。
 4.  **视觉一致性**: 深度解析商品图的视觉特征（颜色、包装、材质、Logo），确保生成的 **画面提示词 (Image Prompt)** 中包含准确的商品描述，保持视觉统一。
-5.  **AI 生成优化**:
-    *   **画面风格**: 根据用户指定的风格（如赛博朋克、皮克斯、国风等）生成画面提示词。
-    *   **视频指令**: 生成包含运镜、动作、构图信息的视频生成提示词。
+5.  **AI 生成优化 (双模式)**:
+    *   **经典模式 (Classic)**: 适合 *Midjourney/Stable Diffusion + Runway/Pika* 工作流。提供静态画面提示词 + 简短动态指令。
+    *   **高动态模式 (High-Dynamic)**: 适合 *Sora/Kling/Luma* 等新一代视频模型。提供包含**动作链、音效、特效**的全流程长文本提示词。
 6.  **短小精悍**: 严格控制每个分镜时长（通常 3-6 秒），总时长适合短视频传播。
 
 ## 使用场景
@@ -46,6 +46,7 @@ description: "Generates 6s viral video scripts for product marketing, featuring 
                 *   **表情要求**: [微表情描述，如：嘴角上扬带着戏谑，眼神坚定]
             *   **画面生成提示词 (Image Prompt)**: `[风格关键词], [商品视觉描述(核心)], [角色外观], [构图/站位描述], [表情/动作], [场景描述], [光影/画质词]`
             *   **视频生成提示词 (Video Prompt)**: `[运镜指令 (如: Slow zoom in, Pan left)], [构图/角度指令], [人物动作/表情变化], [商品展示动态], [环境动态]`
+            *   **高动态视频脚本 (High-Dynamic Script)**: `镜头 [X-X秒] | 场景: [环境与光影细节] | 动作链: [起始动作] -> [中间动作] -> [结束动作] | 表情: [微表情变化] | 音效: [拟音/环境音] | 特效: [光效/粒子/物理碰撞]`
 
 ## 示例 (Examples)
 
@@ -70,6 +71,7 @@ description: "Generates 6s viral video scripts for product marketing, featuring 
         *   **表情要求**: 咬牙切齿，眼神死死盯着前方屏幕，黑眼圈明显。
     *   **画面生成提示词 (Image Prompt)**: `Cyberpunk style, Medium Close-up, Low Angle, Ne Zha with dark circles under eyes, holding a [green energy drink bottle, glowing liquid, metallic texture] (product) in front of chest, sitting in high-tech gaming room, multiple screens, neon lights, messy desk, intense expression, detailed, 8k`
     *   **Video Prompt**: `Low angle shot, handheld camera shake, Ne Zha raises the drink to his mouth aggressively, glowing eyes, dynamic lighting from screens`
+    *   **高动态视频脚本 (High-Dynamic Script)**: `镜头 [0-3秒] | 场景: 赛博朋克电竞房，霓虹光影闪烁，屏幕蓝光映照在哪吒脸上 | 动作链: 哪吒紧握绿色能量饮料 -> 猛地举起饮料至嘴边 -> 仰头灌下 -> 眼神瞬间点亮 | 表情: 疲惫困倦 -> 咬牙切齿 -> 瞬间兴奋狂热 | 音效: 键盘敲击声(噼里啪啦) -> 饮料开罐声(咔嚓) -> 吞咽声(咕嘟) | 特效: 饮料瓶身流光闪动，哪吒眼中爆出红光，背景屏幕数据流加速`
 
 *   **分镜 2 (时长: 3秒)**
     *   **剧情**: 熬丙在旁边优雅地拿着另一瓶同款饮料，轻轻摇晃。
@@ -82,5 +84,6 @@ description: "Generates 6s viral video scripts for product marketing, featuring 
         *   **表情要求**: 嘴角微微上扬，带着一丝优雅的嘲讽，眼神轻松。
     *   **画面生成提示词 (Image Prompt)**: `Cyberpunk style, Medium Shot, Eye-level, Ao Bing leaning on gaming chair, elegant pose, holding [green energy drink bottle] (product), blurred back of Ne Zha in foreground, cool blue holographic background, dragon elements, futuristic fashion, cinematic lighting`
     *   **Video Prompt**: `Static camera, shallow depth of field, Ao Bing smiles slightly and shakes the bottle gently, liquid movement inside, soft blue light pulsing`
+    *   **高动态视频脚本 (High-Dynamic Script)**: `镜头 [3-6秒] | 场景: 同样的电竞房，侧面视角，背景是全息龙影装饰 | 动作链: 熬丙优雅靠在椅背 -> 轻轻摇晃手中的绿色饮料 -> 递向镜头方向(给哪吒) | 表情: 嘴角含笑 -> 眼神戏谑 -> 微微点头 | 音效: 液体摇晃声 -> 轻微的龙吟背景音 -> 椅子转动摩擦声 | 特效: 饮料瓶周围有淡淡的冰霜凝结，背景全息龙影缓缓游动`
 
 **(此处省略后续 9 个话题...)**
